@@ -1,0 +1,42 @@
+<div class="halfs half2 mr-auto" style="position: relative;">
+
+    <div class="title-group" data-aos="fade-down" data-aos-duration="800">
+        <a href="#menusPre" class="button button-special" data-bs-target="menusPre" id="menusPreBtn">Menus</a>
+        <a href="#entrees" class="button" data-bs-target="entrees" id="entreesBtn">Entrees</a>
+        <a href="#boissons" class="button" data-bs-target="boissons" id="boissonsBtn">Boissons</a>
+        <a href="#menusPiz" class="button" data-bs-target="menusPiz" id="menusPizBtn">Pizzas</a>
+    </div>
+
+    <!--OPTIONS DU MENU-->
+
+    <div class="menu1" id="menusPre" data-aos="fade-up">
+        <%- include('../blocks/menu_block2.ejs') %>
+    </div>
+
+    <div class="menu2" id="entrees" data-aos="fade-up">
+        <%- include('../blocks/entree_block2.ejs') %>
+    </div>
+
+    <div class="menu3" id="boissons" data-aos="fade-up">
+        <%- include('../blocks/boisson_block2.ejs') %>
+    </div>
+
+    <div class="menu4" id="menusPiz" data-aos="fade-up">
+        <%- include('../blocks/menuPiz_block2.ejs') %>
+    </div>
+
+    <!--OPTIONS DU MENU-->
+
+
+    <!--MODALS-->
+    
+    <%- include('../modals/modal_entree.ejs') %>
+    <%- include('../modals/modal_boisson.ejs') %>
+    <%- include('../modals/modal_menu.ejs') %>
+    <%- include('../modals/modal_pizza.ejs') %>
+
+    <!-- MODALS -->
+
+    <img src="./../public/img/images/tom_Pizza_waiter_without_menues.svg" width="50px" style="position: absolute;right: -40px;bottom: -60px;">
+
+</div>

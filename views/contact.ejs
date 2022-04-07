@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/layouts/header.ejs') %>
+    <%- include('partials/layouts/navbar.ejs') %>
+
+<body>
+    <!-- MODAL -->
+
+    <%- include('partials/modals/modal_maps.ejs') %>
+
+    <!-- MODAL -->
+
+    
+    <div class="container">
+        <h3>56 W E, Sloane Square NYC.</h3>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #305331;color: rgb(246, 250, 215);">
+            Voir Carte
+        </button>
+        <img src="./public/img/images/contact.svg" width="40%" style="margin-left:300px">
+      
+    </div>
+    
+    <%- include('partials/modals/modal_cart.ejs') %>
+    <%- include('partials/layouts/footer.ejs') %>
+</body>
+</html>

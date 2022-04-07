@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/layouts/header.ejs') %>
+  <%- include('partials/layouts/navbar.ejs') %>
+  <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+
+<body>
+    <div id="section">
+      <div class="product">
+        <h3> Commande numéro <%= id %></h3>
+        <!--<img src="https://www.aux-fourneaux.fr/wp-content/uploads/2020/06/Pizza-bianca-comme-en-italie.jpg" alt="The cover of Stubborn Attachments" width="50%"/>
+        <div class="description">
+          <h3>EXTRA MENU</h3>
+          <h5>20.00€</h5>
+        </div>-->
+      </div>
+      <form action="/create-checkout-session" method="POST" id="form-cfm">
+        <div class="form-group">
+          <label for="prenom">Prenom:</label>
+          <input type="text" class="form-control input-sm" id="prenom" aria-describedby="emailHelp" placeholder="Prenom">
+        </div>
+        <div class="form-group">
+          <label for="nom"> Nom:</label>
+          <input type="text" class="form-control" id="nom" placeholder="Nom">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1"> Email:</label>
+          <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="addresse">Addresse:</label>
+          <input type="text" class="form-control" id="addresse" placeholder="Addresse">
+        </div>
+        <div class="form-group">
+          <label for="codeImm">Code Immeuble:</label>
+          <input type="number" class="form-control" id="codeImm" placeholder="Code Immeuble">
+        </div>
+        <div class="form-group">
+          <label for="num"> Numero telephone:</label>
+          <input type="number" class="form-control" id="num" placeholder="Numero">
+        </div>
+        <div class="form-group">
+          <label for="heure"> Heure Livraison Souhaitee: </label>
+          <input type="text" class="form-control" id="heure" placeholder="Heure">
+        </div>
+        
+        <button type="submit" class="btn btn-primarform-group" id="checkout-button">Confirmer La Commande</button>
+      </form>
+
+    
+
+      
+    </div>
+  </body>
+
+  <%- include('partials/layouts/footer.ejs') %>
+
+</html>

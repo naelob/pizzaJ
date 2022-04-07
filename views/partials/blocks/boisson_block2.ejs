@@ -1,0 +1,20 @@
+
+<% for (var i =0; i <boissons.length;  i++ ) { %>
+
+    <div class="item row align-items-center" id="boisson_item_<%= i %>" >
+        <div class="col-sm-3 pr-5">
+            <img class="item_img" src="<%= boissons[i].img %>" >
+        </div>
+        <div class="info col-sm-9">
+            <div class="item_head">
+                <h3 class="item_title"> <%= boissons[i].title %></h3>
+                <span class="item_dots"> </span>
+                <span class="item_price"> <%= boissons[i].price %>€</span>
+            </div>
+            <p class="item_description"> <%= boissons[i].info %> </p>
+            <button id="add-boisson-<%= i %>">Ajouter au Panier</button>
+            <button data-bs-toggle="modal" data-bs-target="#optionsBoisson">Options</button>
+        </div>
+        
+    </div>
+    <% } %>

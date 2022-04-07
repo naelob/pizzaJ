@@ -1,0 +1,1 @@
+const Boisson = require('./../models/Ingredient');

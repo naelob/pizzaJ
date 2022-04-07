@@ -1,0 +1,20 @@
+
+<% for (var i =0; i <entrees.length;  i++ ) { %>
+
+    <div class="item row align-items-center" id="entree_item_<%= i %>" >
+        <div class="col-sm-3 pr-5">
+            <img class="item_img" src="<%= entrees[i].img %>" >
+        </div>
+        <div class="info col-sm-9">
+            <div class="item_head">
+                <h3 class="item_title"> <%= entrees[i].title %></h3>
+                <span class="item_dots"> </span>
+                <span class="item_price"> <%= entrees[i].price %>€</span>
+            </div>
+            <p class="item_description"> <%= entrees[i].info %> </p>
+            <button id="add-entree-<%= i %>">Ajouter au Panier</button>
+            <button data-bs-toggle="modal" data-bs-target="#optionsEntree">Options</button>
+        </div>
+        
+    </div>
+    <% } %>

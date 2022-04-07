@@ -1,0 +1,345 @@
+@font-face {
+    font-family: "Snell";
+    src: url(./fonts/snell.otf);
+}
+@font-face {
+    font-family: "gtsec";
+    src: url(./fonts/gtsect.otf);
+}
+@font-face {
+    font-family: "Ogg";
+    src: url(./fonts/ogg.ttf);
+}
+body{
+    font-family: "Ogg";
+    padding-top: 10px;
+    background-color:rgba(196, 211, 140, 0.411);
+}
+
+/* NAVBAR CSS & HEADER CSS*/
+h1{
+    font-family: "Snell";
+    color: antiquewhite;
+    font-size: 60px;
+}
+.logo{
+    font-family: "gtsec";
+    color: black;
+    font-size: 30px;
+    margin-top: 15px;
+}
+.navbar {
+    background-color: rgb(246, 250, 215);
+    padding-top: 0px !important;
+    padding-bottom: 0 !important;
+    font-size: 20px;
+    margin: 0px 30px;
+    /*max-height: 50px;*/
+    border: double medium #0a0a0a;
+   
+}
+
+.main-box{
+    border: double medium #0a0a0a;
+    margin: 0px 30px;
+    border-top: 0;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.btn-text{
+    text-decoration: none;
+}
+
+#pic-up{
+    min-height: 70vh;
+    background-blend-mode: darken;
+    background-size:cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    margin: 0px 30px;
+    background-image: url(./img/images/warszawianka_Restaurant.svg);
+    border: double medium #0a0a0a;
+
+}
+
+
+
+/* MENU CSS */
+
+.title-group{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000000;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: rgb(246, 250, 215);
+    border: 2px solid #305331;
+    border-radius: 0.75em;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+.button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #424e42;
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px rgb(88, 105, 90), 0 0.625em 0 0 #b2c09c;
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+.button:hover {
+    background: #e3ebd1; 
+    transform: translate(0, 0.25em);
+    color: #305331;
+}
+.button:hover::before {
+    box-shadow: 0 0 0 2px rgb(76, 95, 78), 0 0.5em 0 0 #b2c09c;
+    transform: translate3d(0, 0.5em, -1em);
+}
+.button:active {
+    background: #ffe9e9;
+    transform: translate(0em, 0.75em);
+}
+.button:active::before {
+    box-shadow: 0 0 0 2px rgb(163, 146, 153), 0 0 #b2c09c;
+    transform: translate3d(0, 0, -1em);
+}
+
+
+.menu1{
+    display: none;
+}
+.menu2{
+    display: none;
+}
+.menu3{
+    display: none;
+}
+.menu4{
+    display: block;
+}
+
+.item{
+    margin-bottom: 40px;
+}
+
+.item_head{
+    display: flex;
+    align-items: baseline;
+    font-size: 2rem;
+}
+.item_dots{
+    flex: 1;
+    border-bottom: 1px dashed #aaa;
+    margin: 0 5px;
+}
+.item_description{
+    font-style: italic;
+}
+.item_img{
+    width: 50%;
+}
+
+
+/*MENU.EJS CSS*/
+
+.menu_title{
+    color: black;
+}
+.card{
+    background-color: rgb(246, 250, 215);
+    padding: 10px;
+    margin: 10px;
+    border: double medium #0a0a0a;
+}
+
+.form-select:focus {
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+/* FORM CONFIRMATION CSS*/
+
+#section{
+    text-align: center;
+    padding: 100px;
+}
+
+/* BUTTON & MODAL CSS */
+
+button{
+    display: inline-block;
+    vertical-align: middle;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    background: rgb(246, 250, 215);
+    color: black;
+    text-align: left;
+    border: 1x solid black!important;
+    border-radius: 0;
+    box-shadow: 3px 3px rgb(2, 77, 27), 5px 5px white;
+    padding-right: 5%;
+}
+.modal-content{
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    background: rgb(246, 250, 215);
+    color: black;
+    text-align: left;
+    border: 1x solid black!important;
+    border-radius: 0;
+    box-shadow: 3px 3px rgb(2, 77, 27), 5px 5px;
+    padding-right: 5%;
+}
+
+.modal-body select{
+    display: inline-block;
+    vertical-align: middle;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    background: rgb(246, 250, 215);
+    color: black;
+    text-align: left;
+    border: 1x solid black!important;
+    border-radius: 0;
+    box-shadow: 3px 3px rgb(2, 77, 27), 5px 5px white;
+    padding-right: 5%;
+}
+.modal-body select:hover{
+    color: black;
+    background: rgb(231, 253, 216);
+}
+.modal-body select:active{
+    background-color: white!important;
+    color: black!important;
+    box-shadow: 0px 0px white;
+    transform: translateX(5px) translateY(2px); 
+}
+button:hover{
+    color: black;
+    background: rgb(231, 253, 216);
+}
+
+button:active{
+    background-color: white!important;
+    color: black!important;
+    box-shadow: 0px 0px white;
+    transform: translateX(5px) translateY(2px); 
+}
+
+.cart-logo{
+   animation: hithere 1s ease ;
+}
+@keyframes hithere {
+  30% { transform: scale(1.2); }
+  40%, 60% { transform: rotate(-20deg) scale(1.2); }
+  50% { transform: rotate(20deg) scale(1.2); }
+  70% { transform: rotate(0deg) scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.nav-link i {
+    color: black;
+}
+
+
+
+/* CONNEXION CSS */
+#main-connexion{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.flex-outer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#main-connexion form{
+    padding: 30px;
+}
+#main-connexion form button{
+    margin-top: 10px;
+}
+
+
+/* MODAL PANIER */
+.container {
+    padding: 2rem 0rem;
+}
+.table-image thead td, .table-image thead th {
+    border: 0;
+    color: #666;
+    font-size: 0.8rem;
+}
+.table-image td, .table-image th {
+    vertical-align: middle;
+    text-align: center;
+}
+.table-image td.qty, .table-image th.qty {
+    max-width: 2rem;
+}
+.price {
+    margin-left: 1rem;
+}
+.modal-footer {
+    padding-top: 0rem;
+}
+#cartModal{
+}
+#modal-dialog{
+
+}
+.modal-content{
+    background-color: rgb(246, 250, 215);
+}
+.modal-title{
+    font-family: "gtsec";
+}
+/*.modal-logo{
+    animation-duration: 5s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 0%;
+    }
+}*/
+tr th{
+    font-size: 60px;
+}
+#table-body{
+    font-size: 20px;
+}
+.anim-cart {
+    
+}
+
+/* MENU CSS BUTTON PANIER */
+

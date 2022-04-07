@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/layouts/header.ejs') %>
+    <%- include('partials/layouts/navbar.ejs') %>
+
+<body>
+
+    <!--<div class="main-box">-->
+        <div class="container">
+
+            <!--MODALS-->
+            <div class="modal fade" id="optionsMenu" tabindex="-1" aria-labelledby="optionsMenuLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="optionsMenuLabel">a f f i n e <span> | </span> t e s <span> | </span>e n v i e s ! </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected>Choisis ton entrée  </option>
+                        <option value="1">Entrée 1</option>
+                        <option value="2">Entrée 2</option>
+                        <option value="3">Entrée 3</option>
+                        <option value="4">Entrée 4</option>
+                        <option value="5">Entrée 5</option>
+                        <option value="6">Entrée 6</option>
+                      </select>
+                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected>Choisis ta pizza  </option>
+                        <option value="1">Entrée 1</option>
+                        <option value="2">Entrée 2</option>
+                        <option value="3">Entrée 3</option>
+                        <option value="4">Entrée 4</option>
+                        <option value="5">Entrée 5</option>
+                        <option value="6">Entrée 6</option>
+                      </select>
+                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected>Choisis ta boisson 1  </option>
+                        <option value="1">Entrée 1</option>
+                        <option value="2">Entrée 2</option>
+                        <option value="3">Entrée 3</option>
+                        <option value="4">Entrée 4</option>
+                        <option value="5">Entrée 5</option>
+                        <option value="6">Entrée 6</option>
+                      </select>
+                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected>Choisis ta boisson 2  </option>
+                        <option value="1">Entrée 1</option>
+                        <option value="2">Entrée 2</option>
+                        <option value="3">Entrée 3</option>
+                        <option value="4">Entrée 4</option>
+                        <option value="5">Entrée 5</option>
+                        <option value="6">Entrée 6</option>
+                      </select>
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
+                      <button type="button" class="btn" style="background-color: #305331;color: rgb(246, 250, 215);">Confirmer</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            <div class="menu-special" id="menuPre" data-aos="fade-up">
+                    <div class="card item row align-items-center" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="col-sm-3 pr-5">
+                            <img class="boisson-img" src="./../public/img/images/pizzas/perso1.png">
+                        </div>
+                        <div class="info col-sm-9">
+                            <div class="pizza_head">
+                                <h1 class="menu_title">Extra Menu</h1>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">15€</span>
+                            </div>
+                        
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">1 Entrée au choix : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">1 Pizza Medium au choix : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">2 Boissons au choix d'au plus 33cL : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-dark"  data-bs-toggle="modal" data-bs-target="#optionsMenu">Ajouter au Panier</button>
+                        </div>
+                        
+                    </div>
+                    <div class="card item row align-items-center" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="col-sm-3 pr-5">
+                            <img class="boisson-img" src="./../public/img/images/pizzas/perso2.png">
+                        </div>
+                        <div class="info col-sm-9">
+                            <div class="pizza_head">
+                                <h1 class="menu_title">Mega Menu</h1>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">25€</span>
+                            </div>
+                        
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">2 Entrées au choix : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">2 Pizza Medium au choix : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">1 Boisson au choix d'au moins 1L : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-dark">Ajouter au Panier</button>
+                        </div>
+                        
+                    </div>
+    
+                
+                    <div class="card item row align-items-center" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="col-sm-3 pr-5">
+                            <img class="boisson-img" src="./../public/img/images/pizzas/perso3.png">
+                        </div>
+                        <div class="info col-sm-9">
+                            <div class="pizza_head">
+                                <h1 class="menu_title">Giga Menu</h1>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">35€</span>
+                            </div>
+                        
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">2 Entrées au choix : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">2 Pizza Large au choix : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">1 Boisson au choix d'au moins 1L : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-dark">Ajouter au Panier</button>
+                        </div>
+                        
+                    </div>
+
+                    <div class="card item row align-items-center" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="col-sm-3 pr-5">
+                            <img class="boisson-img" src="./../public/img/images/pizzas/perso4.png">
+                        </div>
+                        <div class="info col-sm-9">
+                            <div class="pizza_head">
+                                <h1 class="menu_title">Dolce Menu</h1>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">45€</span>
+                            </div>
+                        
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">2 Entrées au choix : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">2 Pizza X-Large au choix : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            
+                            <div class="pizza_head">
+                                <h3 class="pizza_title">2 Boissons au choix d'au moins 1L : </h3>
+                                <span class="pizza_dots"></span>
+                                <span class="pizza_price">5€</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-dark">Ajouter au Panier</button>
+                        </div>
+                        
+                    </div>
+                        
+               
+            </div>
+        </div>
+    <!--</div>-->
+    <%- include('partials/modals/modal_cart.ejs') %>
+    <%- include('partials/layouts/footer.ejs') %>
+</body>
+</html>
+
+
+
+

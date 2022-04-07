@@ -1,0 +1,20 @@
+
+<% for (var i =0; i <menus.length;  i++ ) { %>
+
+<div class="item row align-items-center" id="menu_item_<%= i %>" >
+    <div class="col-sm-3 pr-5">
+        <img class="item_img" src="<%= menus[i].img %>" >
+    </div>
+    <div class="info col-sm-9">
+        <div class="item_head">
+            <h3 class="item_title"> <%= menus[i].title %></h3>
+            <span class="item_dots"> </span>
+            <span class="item_price"> <%= menus[i].price %>€</span>
+        </div>
+        <p class="item_description"> <%= menus[i].description %> </p>
+        <button id="add-menu-<%= i %>">Ajouter au Panier</button>
+        <button data-bs-toggle="modal" data-bs-target="#optionsMenu">Options</button>
+    </div>
+    
+</div>
+<% } %>
