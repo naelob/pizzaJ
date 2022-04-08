@@ -8,44 +8,42 @@
 <body>
     <div id="section">
       <div class="product">
-        <h3> Commande numéro <%= id %></h3>
-        <!--<img src="https://www.aux-fourneaux.fr/wp-content/uploads/2020/06/Pizza-bianca-comme-en-italie.jpg" alt="The cover of Stubborn Attachments" width="50%"/>
-        <div class="description">
-          <h3>EXTRA MENU</h3>
-          <h5>20.00€</h5>
-        </div>-->
+        <h3 id="COMMANDE_NAME"> Commande numéro <%= id %></h3>
+       
       </div>
       <form action="/create-checkout-session" method="POST" id="form-cfm">
         <div class="form-group">
           <label for="prenom">Prenom:</label>
-          <input type="text" class="form-control input-sm" id="prenom" aria-describedby="emailHelp" placeholder="Prenom">
+          <input type="text" class="form-control input-sm" id="prenom" name="prenom" aria-describedby="emailHelp" placeholder="Prenom">
         </div>
         <div class="form-group">
           <label for="nom"> Nom:</label>
-          <input type="text" class="form-control" id="nom" placeholder="Nom">
+          <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1"> Email:</label>
-          <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+          <input type="email" class="form-control" id="exampleInputPassword1" name="email" placeholder="Email">
         </div>
         <div class="form-group">
           <label for="addresse">Addresse:</label>
-          <input type="text" class="form-control" id="addresse" placeholder="Addresse">
+          <input type="text" class="form-control" id="addresse" name="addresse" placeholder="Addresse">
         </div>
         <div class="form-group">
           <label for="codeImm">Code Immeuble:</label>
-          <input type="number" class="form-control" id="codeImm" placeholder="Code Immeuble">
+          <input type="number" class="form-control" id="codeImm" name="codeImm" placeholder="Code Immeuble">
         </div>
         <div class="form-group">
           <label for="num"> Numero telephone:</label>
-          <input type="number" class="form-control" id="num" placeholder="Numero">
+          <input type="number" class="form-control" id="num" name="num" placeholder="Numero">
         </div>
         <div class="form-group">
           <label for="heure"> Heure Livraison Souhaitee: </label>
-          <input type="text" class="form-control" id="heure" placeholder="Heure">
+          <input type="text" class="form-control" id="heure" name="heure" placeholder="Heure">
         </div>
+        <!-- input non visible pr avoir la valuer de l'id -->
+        <input type="hidden"  id="idCommandeInput" name="idOrder" value="<%= id %>">
         
-        <button type="submit" class="btn btn-primarform-group" id="checkout-button">Confirmer La Commande</button>
+        <button type="submit" id="checkout-button" style="margin-top: 10px;">Confirmer La Commande</button>
       </form>
 
     

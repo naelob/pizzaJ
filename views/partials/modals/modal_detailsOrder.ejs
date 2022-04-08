@@ -1,0 +1,53 @@
+<div class="modal fade" id="detailOrderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h3 class="modal-title" id="orderModalLabel">
+            d e t a i l s.  <br>
+          </h3>
+          <img class="modal-logo" src="./../public/img/images/cartLogo.png" width="100px" style="margin-right: 50px;" data-aos="fade-up">
+          
+        </div>
+        <div class="modal-body">
+          <table class="table table-image">
+            <thead>
+              <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Qté</th>
+                <th scope="col">Total</th>
+                <th scope="col">Supprimer</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+
+                <% for (var j =0; j <commandesDETAILED[i].liste_items.length;  j++ ) { %>
+
+                <tr>
+                    <td> <%= commandesDETAILED[i].liste_items[j].namearticle %> <%= i %> </td>
+                    <td><%= commandesDETAILED[i].liste_items[j].prixarticle %> </td>
+                    <td class="qty">
+                        <%= commandesDETAILED[i].liste_items[j].quantitearticle %>
+                    </td>
+                    <td>
+                        <span> <%= commandesDETAILED[i].liste_items[j].prixarticle * commandesDETAILED[i].liste_items[j].quantitearticle %>  </span>€
+                    </td>
+                    <td>    
+                        <button id="remove-item">
+                           <!-- <i class="fa fa-times"></i>-->
+                        </button>
+                    </td>              
+                </tr>
+                <% } %>
+            </tbody>
+          </table> 
+          <div class="d-flex justify-content-end">
+            <h5>total: <span class="price-panier"> <%= commandesDETAILED[i].total %></span>€</h5>
+          </div>
+        </div>
+        <div class="modal-footer border-top-0 d-flex justify-content-between">
+          <button type="button"  data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/layouts/header.ejs') %>
+    <%- include('partials/layouts/navbar.ejs') %>
+    <script>
+        $(window).on('load', function() {
+            confetti({
+                particleCount: 150,
+                spread: 60
+            });
+        });
+    </script>
+<body>
+
+
+    <div class="main-box">
+        <div class="container">
+            <section id="menu">
+                <h3>m e r c i  <span class="spaces"></span> p o u r <span class="spaces"></span> ta l i v r a i s o n !</h3>
+                <img class="img-fluid" src="./public/img/images/giphyLivr.gif">
+                
+            </section>
+        </div>
+    </div>
+    <%- include('partials/layouts/footer.ejs') %>
+</body>
+</html>

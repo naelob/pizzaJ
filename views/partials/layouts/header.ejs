@@ -10,31 +10,49 @@
     <script>
         $(document).ready(function(){
 
-            //menus pizza et switch 
+            //TODO : PANIER SEFFACE APRES RELOAD DE LA PAGE 
+            //VARIABLES GLOBALES
 
-            var tab = ["#menusPiz"]
-            $("#boissonsBtn").click(()=>{
-                $(tab[0]).css("display", "none");
-                $("#boissons").css("display", "block");
-                tab[0] = "#boissons";
-            });
-            $("#entreesBtn").click(()=>{
-                $(tab[0]).css("display", "none");
-                $("#entrees").css("display", "block");
-                tab[0] = "#entrees";
-            });
-            $("#menusPizBtn").click(()=>{
-                $(tab[0]).css("display", "none");
-                $("#menusPiz").css("display", "block");
-                tab[0] = "#menusPiz";
-            });
-            $("#menusPreBtn").click(()=>{
-                $(tab[0]).css("display", "none");
-                $("#menusPre").css("display", "block");
-                tab[0] = "#menusPre";
-            });
+            let idUsed = [];
 
-            // panier javascript
+
+            //FONCTIONS UTILES
+
+            function addFood(el,id){
+
+                let contenu = 
+                '<tr><td class="w-25"> <img src='+ el.img+' class="img-fluid" alt="Sheep" width="70%"></td>'
+                    +
+                '<td>'+ el.title + '</td>'
+                +
+
+                '<td>'+el.price+'€</td>'
+                +
+
+                '<td class="qty">'
+                    +
+
+                    '<input class="qtyFromCart" type="number" id="qty'+id+'" name="qty" min="1" max="10" value="1">'
+                    +
+                '</td>'
+                +
+
+                '<td><span>'+el.price+'</span>€</td>'
+                +
+
+                '<td>'
+                    +
+                '<button href="#"  id="remove-item'+id+'">'
+                    +
+                    ''
+                    +
+                '</buton>'
+                +
+                '</td>'                
+                +
+                '</tr>';
+                document.querySelector("#table-body").innerHTML+=contenu;   
+            }
 
             function getCommandeToArray(){
                 let items = document.querySelector('#table-body').children;
@@ -65,51 +83,19 @@
                 return elems;
             }
 
-            $('#cartModal').on('show.bs.modal', function (e) {
-                $(".commande-btn").click(()=>{
-                    var articles = getCommandeToArray();
-                    //ajouter un unique id de commande jamais pris
-                    let id = 32;
-                    $.post("/envoiPanier",
-                        { 
-                            articlesList: articles[0],
-                            totalCommande: articles[1],
-                            id: id
-                        },
-                        function (data, status) {
-                            // faire passer le client a la page de contact de ses infos
-                            // i.e => /finaliser_commande avec modal 
-                            // re envoyer ses infos au serveur
-                            // vider le panier du client
-                            window.location.href = `/finaliser_commande/${id}`;
-                            console.log(data);
-                        
-                    });
-                });
-            })
-           
+            function genererIdCommande(){
+                let id = Math.random() * (200 - 1) + 1;
+                while(idUsed.includes(id)){
+                    id = Math.random() * (200 - 1) + 1;
+                }
+                return Math.ceil(id);
+            }
             
-
-            //ajout au panier
-            for(var i=0;i<5;i++){
-                gestionAjoutPanier("menu");
-            }
-            for(var i=0;i<5;i++){
-                gestionAjoutPanier("entree");
-            }
-            for(var i=0;i<6;i++){
-                gestionAjoutPanier("boisson");
-            }
-            for(var i=0;i<9;i++){
-                gestionAjoutPanier("pizza");
-            }
-
-        
-
             // TODO : gestion de toutes les options et contraintes pour chaque item ici
             function gestionAjoutPanier(type){
                 
-                let t = "#add-"+type+"-" + i;
+                
+                let t = ".add-"+type+"-" + i;
                 $(t).click((e)=>{
                     //animation css cart
                     $(".nav-link i").toggleClass("cart-logo");
@@ -161,47 +147,116 @@
             }
             
             
-            
+            //menus pizza et switch 
 
-            function addFood(el,id){
+            var tab = ["#menusPiz"]
+            $("#boissonsBtn").click(()=>{
+                $(tab[0]).css("display", "none");
+                $("#boissons").css("display", "block");
+                tab[0] = "#boissons";
+            });
+            $("#entreesBtn").click(()=>{
+                $(tab[0]).css("display", "none");
+                $("#entrees").css("display", "block");
+                tab[0] = "#entrees";
+            });
+            $("#menusPizBtn").click(()=>{
+                $(tab[0]).css("display", "none");
+                $("#menusPiz").css("display", "block");
+                tab[0] = "#menusPiz";
+            });
+            $("#menusPreBtn").click(()=>{
+                $(tab[0]).css("display", "none");
+                $("#menusPre").css("display", "block");
+                tab[0] = "#menusPre";
+            });
 
-                let contenu = 
-                '<tr><td class="w-25"> <img src='+ el.img+' class="img-fluid" alt="Sheep"></td>'
-                    +
-                '<td>'+ el.title + '</td>'
-                +
+          
+            //panier du client
+            $('#cartModal').on('show.bs.modal', function (e) {
+                $(".commande-btn").click(()=>{
+                    var articles = getCommandeToArray();
+                    let id = genererIdCommande();
+                    idUsed.push(id);
+                    $.post("/envoiPanier",
+                        { 
+                            articlesList: articles[0],
+                            totalCommande: articles[1],
+                            id: id
+                        },
+                        function (data, status) {
+                            // vider le panier du client
+                            window.location.href = `/finaliser_commande/${id}`;
+                            console.log(data);
+                    });
+                });
+            });
 
-                '<td>'+el.price+'€</td>'
-                +
+            // details commande 
 
-                '<td class="qty">'
-                    +
+           
+                $("#formWaiting").submit((e)=>{
+                    e.preventDefault();
+                    let order_coupon = $('#formWaiting').serialize();
 
-                    '<input type="number" id="qty'+id+'" name="qty" min="1" max="100" value="1">'
-                    +
-                '</td>'
-                +
+                    console.log(order_coupon);
+                    $.post("/statutcommande",
+                    
+                        { 
+                            id: order_coupon.substring(17)
+                        },
+                        function (data, status) {
+                            // vider le panier du client
+                            console.log(data);
+                            let id = data.id;
+                            let payload = data.payload;
+                            let livreur = data.livreur_name;
+                            switch (payload) {
+                                case 1:
+                                    window.location.href = `/statut/${id}/${payload}/${livreur}`;
+                                    break;
+                                default:
+                                    window.location.href = `/statut/${id}/${payload}`;
+                                    break;
+                            }
+                    });
+                });
 
-                '<td><span>'+el.price+'</span>€</td>'
-                +
-            
-                '<td>'
-                    +
-                '<a href="#" class="btn btn-danger btn-sm" id="remove-item'+id+'">'
-                    +
-                    '<i class="fa fa-times"></i>'
-                    +
-                '</a>'
-                +
-                '</td>'                
-                +
-                '</tr>';
-                document.querySelector("#table-body").innerHTML+=contenu;
+                $("#prendreCharge").click((e)=>{
+                    let value = $('.hidden_id').val();
+                    $.post("/priseCharge",
+                        { 
+                            id: value
+                        },
+                        function (data, status) {
+                            let id = data.id;
+                            let livreur = data.livreur;
+                            confetti({
+                                particleCount: 150
+                            });
+                            $("#cnfOrderModal").modal('show');
+                            $("#cnfClose").click(()=>{
+                                location.reload(true);
+                            });
+                            
+                    });
+                });
+          
+           
+
+            //ajout au panier
+            for(var i=0;i<5;i++){
+                gestionAjoutPanier("menu");
             }
-
-
-            
-
+            for(var i=0;i<5;i++){
+                gestionAjoutPanier("entree");
+            }
+            for(var i=0;i<6;i++){
+                gestionAjoutPanier("boisson");
+            }
+            for(var i=0;i<9;i++){
+                gestionAjoutPanier("pizza");
+            }
         });
     </script>
     <title>Pizza Joe</title>

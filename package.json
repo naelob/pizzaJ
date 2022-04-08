@@ -1,16 +1,26 @@
 {
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "canvas-confetti": "^1.5.1",
+    "connect-flash": "^0.1.1",
+    "connect-pg-simple": "^7.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
+    "express-session": "^1.17.2",
     "jquery": "^3.6.0",
     "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
+    "request": "^2.88.2",
     "sequelize": "^6.18.0",
-    "stripe": "^8.215.0"
+    "stripe": "^8.215.0",
+    "uuid": "^8.3.2"
   }
 }

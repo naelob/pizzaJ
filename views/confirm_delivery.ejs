@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/layouts/header.ejs') %>
+    <%- include('partials/layouts/navbar.ejs') %>
+
+<body>
+
+
+    <div class="main-box">
+        <div class="container">
+            <section id="menu">
+                <h3>c o m m a n d e s</h3>
+                <form action="confirm_delivery" method="post" id="formConfirmDelivery">
+                    <label for="order_delivered">Numero de commande : </label>
+                    <input type="number" name="order_delivered">
+                    <button type="submit">Confirmer Livraison</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <%- include('partials/layouts/footer.ejs') %>
+</body>
+</html>

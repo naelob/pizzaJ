@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/layouts/header.ejs') %>
+    <%- include('partials/layouts/navbar.ejs') %>
+
+<body>
+
+
+    <div class="main-box">
+        <div class="container">
+            <section id="menu">
+                <% if (payload==1) { %>
+                    <h3>LA COMMANDE NUMERO <%= id %> EST EN ROUTE ;)</h3>
+                    <h3>ELLE EST GEREE PAR  <%= livreur %> ;)</h3>
+                <% }else if(payload==0){ %>
+                    <h3>LA COMMANDE NUMERO <%= id %> EST LIVREE ;)</h3>
+                <% }else{ %>
+                    <h3>LA COMMANDE NUMERO <%= id %> EST EN PREPARATION ;)</h3>
+                <% } %>
+            </section>
+        </div>
+    </div>
+    <%- include('partials/layouts/footer.ejs') %>
+</body>
+</html>

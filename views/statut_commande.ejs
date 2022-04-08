@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/layouts/header.ejs') %>
+    <%- include('partials/layouts/navbar.ejs') %>
+    <script>
+        $(window).on('load', function() {
+            confetti({
+                particleCount: 150,
+                spread: 60
+            });
+        });
+    </script>
+
+<body>
+
+    <div class="main-box">
+        <div class="container">
+            <section id="menu">
+                <div class="row">
+                    <div class="col">
+                        <h3 style="padding: 30px;"> c o m m a n d e <span class="spaces"></span>  c o n f i r m e e ;)</h3>
+                        
+                        <h5 style="padding: 30px;">Pas de panique ! Vous pouvez consulter l'état de la commande !</h5>
+                        <form action="" method="post" id="formWaiting" style="padding: 30px;">
+                            <label for="order_waiting_nb">Numero de commande : </label>
+                            <input type="number" name="order_waiting_nb">
+                            <button type="submit" id="waiting_detail">Consulter</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <img src="./public/img/images/giphPiz.gif">
+
+                    </div>
+               
+            </section>
+        </div>
+    </div>
+    <%- include('partials/layouts/footer.ejs') %>
+</body>
+</html>

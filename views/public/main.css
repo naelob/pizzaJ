@@ -22,6 +22,50 @@ h1{
     color: antiquewhite;
     font-size: 60px;
 }
+h3{
+    font-family: "gtsec";
+    color: black;
+    font-size: 30px;
+}
+h5{
+    font-family: "gtsec";
+    color: black;
+    font-size: 30px;
+}
+.spaces{
+    padding: 0 5px;
+}
+#imageEmpty {
+    animation: bounce-in-right 2s ease ;
+}
+#textEmpty{
+    animation: bounce-in-left 2s ease;
+
+}
+@keyframes bounce-in-right {
+    0% {
+        opacity: 0;
+        transform: translateZ(2000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(-30px);
+    }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+@keyframes bounce-in-left {
+    0% {
+        opacity: 0;
+        transform: translateY(2000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    80% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
 .logo{
     font-family: "gtsec";
     color: black;
@@ -201,6 +245,20 @@ button{
     box-shadow: 3px 3px rgb(2, 77, 27), 5px 5px white;
     padding-right: 5%;
 }
+#COMMANDE_NAME{
+    display: inline-block;
+    vertical-align: middle;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    background: rgb(246, 250, 215);
+    color: black;
+    text-align: left;
+    border: 1x solid black!important;
+    border-radius: 0;
+    box-shadow: 3px 3px rgb(2, 77, 27), 5px 5px white;
+    padding-right: 5%;
+}
+
 .modal-content{
     user-select: none;
     padding: 0.375rem 0.75rem;
@@ -308,38 +366,21 @@ button:active{
 .modal-footer {
     padding-top: 0rem;
 }
-#cartModal{
-}
-#modal-dialog{
 
-}
 .modal-content{
     background-color: rgb(246, 250, 215);
 }
 .modal-title{
     font-family: "gtsec";
 }
-/*.modal-logo{
-    animation-duration: 5s;
-    animation-name: slidein;
-}
-@keyframes slidein {
-    from {
-      margin-left: 100%;
-    }
-    to {
-      margin-left: 0%;
-    }
-}*/
+
 tr th{
     font-size: 60px;
 }
 #table-body{
     font-size: 20px;
 }
-.anim-cart {
-    
-}
+
 
 /* MENU CSS BUTTON PANIER */
 
