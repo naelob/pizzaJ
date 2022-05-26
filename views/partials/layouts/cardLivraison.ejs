@@ -1,52 +1,54 @@
 <% for (var i =0; i <commandesDETAILED.length;  i++ ) { %>
 
-<div class="col-sm-4">
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="./../../public/img/images/picDELIV.svg" alt="Card image cap" width="70px">
-        <div class="card-body">
-        <h5 class="card-title">commande <%= commandesDETAILED[i].order_name %></h5>
-        <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-        </div>
-    
-        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#detailOrderModal">
-            <i class="fas fa-shopping-cart fa-bounce"></i>
-        </a>
-        <%- include('../modals/modal_detailsOrder.ejs',{i : i}) %>
+  <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./../../public/img/images/picDELIV.svg" alt="Card image cap" width="70px">
+          <div class="card-body">
+          <h5 class="card-title">commande <%= commandesDETAILED[i].order_name %></h5>
+          <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+          </div>
       
-        <input type="hidden" class="hidden_id" value="<%= commandesDETAILED[i].order_name %>">
-        
-        <div class="card-body">
-            <button type="submit" class="commande-btn" id="prendreCharge">Prendre en charge</button>
-        </div>
-    </div>
-
-    <div class="modal fade" id="cnfOrderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalCnf" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header border-bottom-0">
-              <h3 class="modal-title" id="orderModalCnf">
-                t h a n k y o u.  <br>
-              </h3>
-              <img class="modal-logo" src="./../public/img/images/cartLogo.png" width="100px" style="margin-right: 50px;" data-aos="fade-up">
-              
-            </div>
-            <div class="modal-body">
-                Merci beaucoup pour la prise en charge !
-            </div>
-            <div class="modal-footer border-top-0 d-flex justify-content-between">
-              <button type="button"  id="cnfClose" data-bs-dismiss="modal">Fermer</button>
+          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#detailOrderModal">
+              <i class="fas fa-shopping-cart fa-bounce"></i>
+          </a>
+          <%- include('../modals/modal_detailsOrder.ejs',{i : i}) %>
+          
+          <input type="text" class="livr" placeholder="Entre ton nom en tant que livreur !" name="nom-livreur">
+          <input type="hidden" class="hidden_id" value="<%= commandesDETAILED[i].order_name %>">
+          
+          <div class="card-body">
+              <button type="submit" class="commande-btn" id="prendreCharge">Prendre en charge</button>
+          </div>
+      </div>
+  
+      <div class="modal fade" id="cnfOrderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalCnf" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-bottom-0">
+                <h3 class="modal-title" id="orderModalCnf">
+                  t h a n k y o u.  <br>
+                </h3>
+                <img class="modal-logo" src="./../public/img/images/cartLogo.png" width="100px" style="margin-right: 50px;" data-aos="fade-up">
+                
+              </div>
+              <div class="modal-body">
+                  Merci beaucoup pour la prise en charge !
+              </div>
+              <div class="modal-footer border-top-0 d-flex justify-content-between">
+                <button type="button"  id="cnfClose" data-bs-dismiss="modal">Fermer</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    
-
-
-
-
-</div>
-
-
-
-<% } %>
-
+      
+  
+  
+  
+  
+  </div>
+  
+  
+  
+  <% } %>
+  
+  
