@@ -2,7 +2,9 @@
 
 pizza-projet-web.zip qu'il faut decompresser
 
+```
 node main.js
+```
 
 localhost:3000
 
