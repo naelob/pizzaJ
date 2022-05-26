@@ -6,9 +6,9 @@ pizza-projet-web.zip qu'il faut decompresser
 node main.js
 ```
 
-localhost:3000
+se rendre sur le lien local : ``` localhost:3000 ```
 
-Cote Client
+### Cote Client
 
 1. Commander en ajoutant au panier n'importe quel item (Menu,Entree, Boisson, Pizza)
 2. Visualiser le panier en haut à droite
@@ -16,7 +16,7 @@ Cote Client
 4. Entrer ses informations personnelles
 5. Payer : rentrer des infos factices et pour la carte ; 4242 4242 4242 4242 02/43 123
    
-Cote Livreur
+### Cote Livreur
 
 1. Livrer une commande : quand un livreur livre une commande il gagne 300 points et s'il depasse un certian nombre de points il peut changer de grade (junior,veteran ...)
 
